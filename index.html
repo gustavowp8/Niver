@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#7B1428">
+
+    <meta name="description"
+          content="Você está convidado para celebrar os 15 anos da Sophia!">
+
+    <title>15 Anos da Sophia | Convite Especial</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <main class="background">
+
+        <section class="invitation">
+
+            <div class="decor">
+                ✧ ♡ ✧
+            </div>
+
+            <p class="subtitle">
+                Um momento especial
+            </p>
+
+            <h1 class="name">
+                Sophia
+            </h1>
+
+            <p class="age">
+                15 ANOS
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="message">
+
+                Quinze anos de sonhos, descobertas
+                e momentos inesquecíveis.
+
+                <br><br>
+
+                Quero celebrar essa data tão especial
+                ao lado das pessoas que fazem parte
+                da minha história.
+
+                <br><br>
+
+                Sua presença tornará esse dia
+                ainda mais inesquecível!
+
+            </p>
+
+            <!-- Informações da festa -->
+
+            <div class="details">
+
+                <div class="detail">
+
+                    <p class="detail-title">
+                        Data
+                    </p>
+
+                    <p class="detail-value">
+                        22 de Novembro de 2026
+                    </p>
+
+                </div>
+
+                <div class="detail">
+
+                    <p class="detail-title">
+                        Horário
+                    </p>
+
+                    <p class="detail-value">
+                        A partir das 11h
+                    </p>
+
+                </div>
+
+                <div class="detail">
+
+                    <p class="detail-title">
+                        Local
+                    </p>
+
+                    <p class="detail-value">
+
+                        Q 10, Lote 27
+
+                        <br>
+
+                        Santa Luzia - Lago Azul
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Google Maps -->
+
+            <a
+                href="https://maps.app.goo.gl/1vc1ErdjjR6Gh29TA?g_st=ac"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button">
+
+                <span class="button-icon">📍</span>
+
+                VER LOCALIZAÇÃO
+
+            </a>
+
+            
+<!-- Botão de confirmação de presença -->
+
+<button
+    type="button"
+    class="button button-confirm"
+    id="btnConfirmarPresenca">
+
+    <span>♡</span>
+
+    CONFIRMAR PRESENÇA
+
+</button>
+
+
+            <div class="divider"></div>
+
+            <p class="footer">
+
+                Espero você para celebrar comigo!
+
+            </p>
+
+            <!-- Contagem regressiva -->
+
+            <div class="countdown-container">
+
+                <p class="countdown-title">
+
+                    Faltam
+
+                </p>
+
+                <div class="countdown">
+
+                    <div class="countdown-item">
+
+                        <span id="days">00</span>
+
+                        <small>Dias</small>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span id="hours">00</span>
+
+                        <small>Horas</small>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span id="minutes">00</span>
+
+                        <small>Minutos</small>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <span id="seconds">00</span>
+
+                        <small>Segundos</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    
+<!-- ==============================
+     MODAL DE CONFIRMAÇÃO
+============================== -->
+
+<div
+    class="modal-overlay"
+    id="modalPresenca"
+    aria-hidden="true">
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitulo">
+
+        <!-- Botão fechar -->
+
+        <button
+            type="button"
+            class="modal-close"
+            id="btnFecharModal"
+            aria-label="Fechar janela">
+
+            &times;
+
+        </button>
+
+        <!-- Cabeçalho -->
+
+        <div class="modal-header">
+
+            <div class="modal-icon">
+                ♡
+            </div>
+
+            <p class="modal-subtitle">
+
+                15 ANOS DA SOPHIA
+
+            </p>
+
+            <h2 id="modalTitulo">
+
+                Você vem celebrar comigo?
+
+            </h2>
+
+            <p class="modal-description">
+
+                Sua presença é o meu maior presente!
+
+                Mas, se desejar, preparei algumas
+                sugestões com muito carinho.
+
+            </p>
+
+        </div>
+
+        <!-- Sugestões -->
+
+        <div class="gift-section">
+
+            <p class="gift-title">
+
+                SUGESTÕES DE PRESENTES
+
+            </p>
+
+            <p class="gift-description">
+
+                Escolha uma opção ou continue
+                sem selecionar um presente.
+
+            </p>
+
+            <div class="gift-options">
+
+                <!-- Presente 1 -->
+
+                <button
+                    type="button"
+                    class="gift-option"
+                    data-gift="Perfume">
+
+                    <span class="gift-icon">
+                        ♡
+                    </span>
+
+                    <span class="gift-name">
+
+                        Perfume
+
+                    </span>
+
+                    <span class="gift-check">
+
+                        ✓
+
+                    </span>
+
+                </button>
+
+                <!-- Presente 2 -->
+
+                <button
+                    type="button"
+                    class="gift-option"
+                    data-gift="Maquiagem">
+
+                    <span class="gift-icon">
+                        ✧
+                    </span>
+
+                    <span class="gift-name">
+
+                        Maquiagem
+
+                    </span>
+
+                    <span class="gift-check">
+
+                        ✓
+
+                    </span>
+
+                </button>
+
+                <!-- Presente 3 -->
+
+                <button
+                    type="button"
+                    class="gift-option"
+                    data-gift="Roupas">
+
+                    <span class="gift-icon">
+                        ♡
+
+                    </span>
+
+                    <span class="gift-name">
+
+                        Roupas
+
+                    </span>
+
+                    <span class="gift-check">
+
+                        ✓
+
+                    </span>
+
+                </button>
+
+                <!-- Presente 4 -->
+
+                <button
+                    type="button"
+                    class="gift-option"
+                    data-gift="Acessórios">
+
+                    <span class="gift-icon">
+                        ✧
+
+                    </span>
+
+                    <span class="gift-name">
+
+                        Acessórios
+
+                    </span>
+
+                    <span class="gift-check">
+
+                        ✓
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Botões -->
+
+        
+<!-- FORMULÁRIO DE CONFIRMAÇÃO -->
+
+<form id="formPresenca">
+
+    <div class="form-section">
+
+        <label for="nomeConvidado">
+            Seu nome completo
+        </label>
+
+        <input
+            type="text"
+            id="nomeConvidado"
+            name="nomeConvidado"
+            placeholder="Digite seu nome"
+            maxlength="100"
+            required>
+
+    </div>
+
+    <div class="form-section">
+
+        <label for="nomeAcompanhante">
+            Nome do acompanhante
+        </label>
+
+        <input
+            type="text"
+            id="nomeAcompanhante"
+            name="nomeAcompanhante"
+            placeholder="Digite o nome do acompanhante"
+            maxlength="100">
+
+        <small>
+            Caso não tenha acompanhante, deixe em branco.
+        </small>
+
+    </div>
+
+    <!-- Presente selecionado -->
+
+    <div class="form-section">
+
+        <label for="presenteConfirmado">
+            Presente escolhido
+        </label>
+
+        <input
+            type="text"
+            id="presenteConfirmado"
+            readonly
+            placeholder="Nenhum presente selecionado">
+
+    </div>
+
+    <!-- Botão enviar -->
+
+    <button
+        type="submit"
+        class="modal-button modal-button-primary"
+        id="btnEnviar">
+
+        CONFIRMAR PRESENÇA
+
+    </button>
+
+    <!-- Continuar sem presente -->
+
+    <button
+        type="button"
+        class="modal-button modal-button-secondary"
+        id="btnSemPresente">
+
+        CONTINUAR SEM PRESENTE
+
+    </button>
+
+    <!-- Status -->
+
+    <div
+        id="status"
+        class="form-status"
+        role="status"
+        aria-live="polite">
+
+    </div>
+
+</form>
+
+
+        <!-- Tela de confirmação -->
+
+        <div
+            class="confirmation-message"
+            id="mensagemConfirmacao"
+            hidden>
+
+            <div class="confirmation-icon">
+
+                ✨
+
+            </div>
+
+            <h3>
+
+                Obrigada!
+
+            </h3>
+
+            <p id="textoConfirmacao">
+
+                Sua presença será muito especial!
+
+            </p>
+
+            <button
+                type="button"
+                class="modal-button modal-button-primary"
+                id="btnFinalizar">
+
+                FECHAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

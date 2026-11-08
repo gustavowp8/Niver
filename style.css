@@ -1,0 +1,1189 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --vermelho: #7B1428;
+
+    --vermelho-escuro: #4A0918;
+
+    --vermelho-claro: #A52A43;
+
+    --dourado: #C9A45C;
+
+    --dourado-claro: #E8D19A;
+
+    --champagne: #FFF9F0;
+
+    --texto: #5B2432;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+
+    background: var(--champagne);
+
+    color: var(--texto);
+
+    min-height: 100vh;
+
+}
+
+/* ==============================
+   FUNDO
+============================== */
+
+.background {
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            #F2D9D5,
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #E8D19A,
+            transparent 45%
+        ),
+
+        var(--vermelho-escuro);
+
+}
+
+/* ==============================
+   CONVITE
+============================== */
+
+.invitation {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--champagne);
+
+    border: 2px solid var(--dourado);
+
+    border-radius: 24px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    box-shadow:
+
+        0 20px 60px rgba(0, 0, 0, 0.30);
+
+    animation: appear 1.2s ease;
+
+}
+
+/* Moldura interna */
+
+.invitation::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid var(--dourado);
+
+    border-radius: 17px;
+
+    pointer-events: none;
+
+}
+
+/* ==============================
+   DECORAÇÃO
+============================== */
+
+.decor {
+
+    color: var(--dourado);
+
+    font-size: 28px;
+
+    letter-spacing: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+.subtitle {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: var(--vermelho);
+
+    margin-bottom: 15px;
+
+}
+
+/* ==============================
+   NOME
+============================== */
+
+.name {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(65px, 12vw, 100px);
+
+    line-height: 1.1;
+
+    color: var(--vermelho);
+
+    font-weight: normal;
+
+    text-shadow:
+
+        1px 1px 0 var(--dourado-claro);
+
+}
+
+.age {
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    color: #A67B32;
+
+    margin-top: 12px;
+
+}
+
+/* ==============================
+   SEPARADOR
+============================== */
+
+.divider {
+
+    width: 100px;
+
+    height: 2px;
+
+    background: var(--dourado);
+
+    margin: 30px auto;
+
+}
+
+/* ==============================
+   MENSAGEM
+============================== */
+
+.message {
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #6B3945;
+
+    max-width: 380px;
+
+    margin: 0 auto;
+
+}
+
+/* ==============================
+   INFORMAÇÕES
+============================== */
+
+.details {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+.detail {
+
+    padding: 0 10px;
+
+}
+
+.detail-title {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #A67B32;
+
+    margin-bottom: 8px;
+
+}
+
+.detail-value {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: var(--vermelho);
+
+}
+
+/* ==============================
+   BOTÃO GOOGLE MAPS
+============================== */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    padding: 16px 28px;
+
+    border: 1px solid var(--dourado);
+
+    border-radius: 50px;
+
+    background: var(--vermelho);
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+.button:hover {
+
+    background: var(--vermelho-escuro);
+
+    color: var(--dourado-claro);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 8px 20px rgba(123, 20, 40, 0.25);
+
+}
+
+.button-icon {
+
+    font-size: 16px;
+
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.footer {
+
+    margin-top: 35px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 30px;
+
+    color: var(--vermelho);
+
+}
+
+/* ==============================
+   CONTAGEM REGRESSIVA
+============================== */
+
+.countdown-container {
+
+    margin-top: 35px;
+
+}
+
+.countdown-title {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #A67B32;
+
+    margin-bottom: 20px;
+
+}
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+.countdown-item {
+
+    min-width: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.countdown-item span {
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    color: var(--vermelho);
+
+}
+
+.countdown-item small {
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #A67B32;
+
+}
+
+/* ==============================
+   ANIMAÇÃO
+============================== */
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 480px) {
+
+    .background {
+
+        padding: 15px 10px;
+
+    }
+
+    .invitation {
+
+        padding: 45px 20px;
+
+        border-radius: 20px;
+
+    }
+
+    .subtitle {
+
+        letter-spacing: 3px;
+
+        font-size: 10px;
+
+    }
+
+    .message {
+
+        font-size: 13px;
+
+    }
+
+    .detail-value {
+
+        font-size: 14px;
+
+    }
+
+    .button {
+
+        width: 100%;
+
+        max-width: 280px;
+
+    }
+
+    .countdown {
+
+        gap: 8px;
+
+    }
+
+    .countdown-item {
+
+        min-width: 55px;
+
+    }
+
+    .countdown-item span {
+
+        font-size: 22px;
+
+    }
+
+    .countdown-item small {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+
+/* ==============================
+   BOTÃO CONFIRMAR PRESENÇA
+============================== */
+
+.button-confirm {
+
+    display: flex;
+
+    width: 100%;
+
+    max-width: 280px;
+
+    margin: 15px auto 0;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.button-confirm span {
+
+    font-size: 18px;
+
+    color: var(--dourado-claro);
+
+}
+
+/* ==============================
+   FUNDO DO MODAL
+============================== */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    background: rgba(40, 5, 15, 0.78);
+
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+
+}
+
+/* Modal aberto */
+
+.modal-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+/* ==============================
+   CARTÃO MODAL
+============================== */
+
+.modal {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 460px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--champagne);
+
+    border: 2px solid var(--dourado);
+
+    border-radius: 22px;
+
+    padding: 35px 25px;
+
+    box-shadow:
+
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(20px) scale(0.97);
+
+    transition: transform 0.3s ease;
+
+}
+
+/* Animação */
+
+.modal-overlay.active .modal {
+
+    transform: translateY(0) scale(1);
+
+}
+
+/* ==============================
+   BOTÃO FECHAR
+============================== */
+
+.modal-close {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--vermelho);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.modal-close:hover {
+
+    background: #F2E3DF;
+
+    transform: rotate(90deg);
+
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.modal-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.modal-icon {
+
+    font-size: 35px;
+
+    color: var(--dourado);
+
+    margin-bottom: 15px;
+
+}
+
+.modal-subtitle {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #A67B32;
+
+    margin-bottom: 12px;
+
+}
+
+.modal-header h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 38px;
+
+    font-weight: normal;
+
+    color: var(--vermelho);
+
+    line-height: 1.2;
+
+}
+
+.modal-description {
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #76505C;
+
+}
+
+/* ==============================
+   SUGESTÕES
+============================== */
+
+.gift-section {
+
+    margin-top: 25px;
+
+}
+
+.gift-title {
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #A67B32;
+
+    margin-bottom: 10px;
+
+}
+
+.gift-description {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #76505C;
+
+    margin-bottom: 20px;
+
+}
+
+/* Lista de presentes */
+
+.gift-options {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+/* Opção de presente */
+
+.gift-option {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 110px;
+
+    padding: 15px;
+
+    border: 1px solid #E6D5C2;
+
+    border-radius: 14px;
+
+    background: #FFFFFF;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Ícone */
+
+.gift-icon {
+
+    font-size: 25px;
+
+    color: var(--dourado);
+
+}
+
+/* Nome */
+
+.gift-name {
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: var(--vermelho);
+
+}
+
+/* Check */
+
+.gift-check {
+
+    position: absolute;
+
+    top: 8px;
+
+    right: 10px;
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    transform: scale(0.5);
+
+    transition: 0.2s;
+
+}
+
+/* Hover */
+
+.gift-option:hover {
+
+    border-color: var(--dourado);
+
+    transform: translateY(-2px);
+
+}
+
+/* Presente selecionado */
+
+.gift-option.selected {
+
+    background: #FFF0E9;
+
+    border: 2px solid var(--dourado);
+
+    box-shadow:
+
+        0 5px 15px rgba(123, 20, 40, 0.08);
+
+}
+
+.gift-option.selected .gift-check {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+/* ==============================
+   BOTÕES DO MODAL
+============================== */
+
+.modal-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+}
+
+/* Botões */
+
+.modal-button {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 13px 18px;
+
+    border-radius: 50px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+}
+
+/* Principal */
+
+.modal-button-primary {
+
+    background: var(--vermelho);
+
+    border: 1px solid var(--dourado);
+
+    color: #FFFFFF;
+
+}
+
+.modal-button-primary:hover {
+
+    background: var(--vermelho-escuro);
+
+    color: var(--dourado-claro);
+
+    transform: translateY(-2px);
+
+}
+
+/* Secundário */
+
+.modal-button-secondary {
+
+    background: transparent;
+
+    border: 1px solid #E3CBA0;
+
+    color: var(--vermelho);
+
+}
+
+.modal-button-secondary:hover {
+
+    background: #F5E8DF;
+
+}
+
+/* ==============================
+   CONFIRMAÇÃO
+============================== */
+
+.confirmation-message {
+
+    text-align: center;
+
+    padding-top: 15px;
+
+}
+
+.confirmation-icon {
+
+    font-size: 45px;
+
+    color: var(--dourado);
+
+    margin-bottom: 15px;
+
+}
+
+.confirmation-message h3 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+    color: var(--vermelho);
+
+}
+
+.confirmation-message p {
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #76505C;
+
+    margin: 15px 0 25px;
+
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 480px) {
+
+    .modal {
+
+        padding: 35px 18px;
+
+        border-radius: 20px;
+
+        max-height: 88vh;
+
+    }
+
+    .modal-header h2 {
+
+        font-size: 34px;
+
+    }
+
+    .gift-options {
+
+        gap: 10px;
+
+    }
+
+    .gift-option {
+
+        min-height: 100px;
+
+        padding: 12px;
+
+    }
+
+    .gift-name {
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* Atributo hidden */
+
+[hidden] {
+
+    display: none !important;
+
+}
+
+
+/* FORMULÁRIO */
+
+.form-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+.form-section label {
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    color: var(--vermelho);
+
+}
+
+.form-section input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    border: 1px solid #E3CBA0;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #FFFFFF;
+
+    color: var(--vermelho);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+
+}
+
+.form-section input:focus {
+
+    border-color: var(--dourado);
+
+    box-shadow:
+
+        0 0 0 3px rgba(201, 164, 92, 0.12);
+
+}
+
+.form-section input::placeholder {
+
+    color: #B7A0A6;
+
+}
+
+.form-section input[readonly] {
+
+    background: #F5EDE5;
+
+}
+
+.form-section small {
+
+    font-size: 10px;
+
+    color: #8B737B;
+
+    line-height: 1.6;
+
+}
+
+/* Status */
+
+.form-status {
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+    color: var(--vermelho);
+
+}
+
+.form-status:empty {
+
+    display: none;
+
+}
