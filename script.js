@@ -1,18 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    
 
     /* =====================================
        1. CONTAGEM REGRESSIVA
     ===================================== */
 
     const dataFesta = new Date(
-        2026,
-        10,
-        22,
-        11,
-        0,
-        0
+        2026, 10, 22, 11, 0, 0
     ).getTime();
 
     const dias = document.getElementById("days");
@@ -23,18 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function atualizarContagem() {
 
         const agora = new Date().getTime();
-
         const distancia = dataFesta - agora;
 
         if (distancia <= 0) {
-
             dias.textContent = "00";
             horas.textContent = "00";
             minutos.textContent = "00";
             segundos.textContent = "00";
-
             return;
-
         }
 
         const quantidadeDias = Math.floor(
@@ -42,40 +32,24 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         const quantidadeHoras = Math.floor(
-            (distancia % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
+            (distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
 
         const quantidadeMinutos = Math.floor(
-            (distancia % (1000 * 60 * 60))
-            / (1000 * 60)
+            (distancia % (1000 * 60 * 60)) / (1000 * 60)
         );
 
         const quantidadeSegundos = Math.floor(
-            (distancia % (1000 * 60))
-            / 1000
+            (distancia % (1000 * 60)) / 1000
         );
 
-        dias.textContent = String(
-            quantidadeDias
-        ).padStart(2, "0");
-
-        horas.textContent = String(
-            quantidadeHoras
-        ).padStart(2, "0");
-
-        minutos.textContent = String(
-            quantidadeMinutos
-        ).padStart(2, "0");
-
-        segundos.textContent = String(
-            quantidadeSegundos
-        ).padStart(2, "0");
-
+        dias.textContent = String(quantidadeDias).padStart(2, "0");
+        horas.textContent = String(quantidadeHoras).padStart(2, "0");
+        minutos.textContent = String(quantidadeMinutos).padStart(2, "0");
+        segundos.textContent = String(quantidadeSegundos).padStart(2, "0");
     }
 
     atualizarContagem();
-
     setInterval(atualizarContagem, 1000);
 
 
@@ -83,69 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
        2. ELEMENTOS DO MODAL
     ===================================== */
 
-    const modalPresenca = document.getElementById(
-        "modalPresenca"
-    );
+    const modalPresenca = document.getElementById("modalPresenca");
 
-    const btnConfirmarPresenca = document.getElementById(
-        "btnConfirmarPresenca"
-    );
+    const btnConfirmarPresenca = document.getElementById("btnConfirmarPresenca");
+    const btnFecharModal = document.getElementById("btnFecharModal");
 
-    const btnFecharModal = document.getElementById(
-        "btnFecharModal"
-    );
+    const formPresenca = document.getElementById("formPresenca");
 
-    const formPresenca = document.getElementById(
-        "formPresenca"
-    );
+    const mensagemConfirmacao = document.getElementById("mensagemConfirmacao");
+    const textoConfirmacao = document.getElementById("textoConfirmacao");
 
-    const mensagemConfirmacao = document.getElementById(
-        "mensagemConfirmacao"
-    );
+    const nomeConvidadoInput = document.getElementById("nomeConvidado");
+    const nomeAcompanhanteInput = document.getElementById("nomeAcompanhante");
 
-    const textoConfirmacao = document.getElementById(
-        "textoConfirmacao"
-    );
+    const presenteConfirmadoInput = document.getElementById("presenteConfirmado");
 
-    const nomeConvidadoInput = document.getElementById(
-        "nomeConvidado"
-    );
+    const btnEnviar = document.getElementById("btnEnviar");
+    const btnSemPresente = document.getElementById("btnSemPresente");
+    const btnFinalizar = document.getElementById("btnFinalizar");
 
-    const nomeAcompanhanteInput = document.getElementById(
-        "nomeAcompanhante"
-    );
+    const statusPresenca = document.getElementById("status");
 
-    const presenteConfirmadoInput = document.getElementById(
-        "presenteConfirmado"
-    );
+    const giftSection = document.querySelector(".gift-section");
+    const modalHeader = document.querySelector(".modal-header");
 
-    const btnEnviar = document.getElementById(
-        "btnEnviar"
-    );
-
-    const btnSemPresente = document.getElementById(
-        "btnSemPresente"
-    );
-
-    const btnFinalizar = document.getElementById(
-        "btnFinalizar"
-    );
-
-    const statusPresenca = document.getElementById(
-        "status"
-    );
-
-    const giftSection = document.querySelector(
-        ".gift-section"
-    );
-
-    const modalHeader = document.querySelector(
-        ".modal-header"
-    );
-
-    const giftOptions = document.querySelectorAll(
-        ".gift-option"
-    );
+    const giftOptions = document.querySelectorAll(".gift-option");
 
 
     /* =====================================
@@ -153,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================== */
 
     let presenteSelecionado = null;
-
     let modalAberto = false;
 
 
@@ -165,21 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalPresenca.classList.add("active");
 
-        modalPresenca.setAttribute(
-            "aria-hidden",
-            "false"
-        );
+        modalPresenca.setAttribute("aria-hidden", "false");
 
         document.body.style.overflow = "hidden";
 
         modalAberto = true;
-
     }
 
-    btnConfirmarPresenca.addEventListener(
-        "click",
-        abrirModal
-    );
+    btnConfirmarPresenca.addEventListener("click", abrirModal);
 
 
     /* =====================================
@@ -190,60 +118,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         modalPresenca.classList.remove("active");
 
-        modalPresenca.setAttribute(
-            "aria-hidden",
-            "true"
-        );
+        modalPresenca.setAttribute("aria-hidden", "true");
 
         document.body.style.overflow = "";
 
         modalAberto = false;
-
     }
 
-    btnFecharModal.addEventListener(
-        "click",
-        fecharModal
-    );
+    btnFecharModal.addEventListener("click", fecharModal);
 
 
     /* =====================================
        6. FECHAR CLICANDO FORA
     ===================================== */
 
-    modalPresenca.addEventListener(
-        "click",
-        function (event) {
+    modalPresenca.addEventListener("click", function (event) {
 
-            if (event.target === modalPresenca) {
-
-                fecharModal();
-
-            }
-
+        if (event.target === modalPresenca) {
+            fecharModal();
         }
-    );
+
+    });
 
 
     /* =====================================
        7. FECHAR COM ESC
     ===================================== */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    document.addEventListener("keydown", function (event) {
 
-            if (
-                event.key === "Escape" &&
-                modalAberto
-            ) {
-
-                fecharModal();
-
-            }
-
+        if (event.key === "Escape" && modalAberto) {
+            fecharModal();
         }
-    );
+
+    });
 
 
     /* =====================================
@@ -252,32 +160,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     giftOptions.forEach(function (opcao) {
 
-        opcao.addEventListener(
-            "click",
-            function () {
+        opcao.addEventListener("click", function () {
 
-                // Limpar seleção anterior
+            // Limpar seleção anterior
 
-                giftOptions.forEach(function (item) {
+            giftOptions.forEach(function (item) {
+                item.classList.remove("selected");
+            });
 
-                    item.classList.remove("selected");
+            // Selecionar presente
 
-                });
+            opcao.classList.add("selected");
 
-                // Selecionar presente
+            presenteSelecionado = opcao.dataset.gift;
 
-                opcao.classList.add("selected");
+            // Atualizar campo
 
-                presenteSelecionado =
-                    opcao.dataset.gift;
+            presenteConfirmadoInput.value = presenteSelecionado;
 
-                // Atualizar campo
-
-                presenteConfirmadoInput.value =
-                    presenteSelecionado;
-
-            }
-        );
+        });
 
     });
 
@@ -286,15 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
        9. MOSTRAR CONFIRMAÇÃO
     ===================================== */
 
-    function mostrarConfirmacao(
-        nome,
-        presente
-    ) {
+    function mostrarConfirmacao(nome, presente) {
 
         formPresenca.hidden = true;
-
         giftSection.hidden = true;
-
         modalHeader.hidden = true;
 
         mensagemConfirmacao.hidden = false;
@@ -323,30 +219,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
-       10. ENVIAR CONFIRMAÇÃO AO TELEGRAM
+       10. CONFIGURAÇÃO DO TELEGRAM
     ===================================== */
 
     const TELEGRAM_TOKEN = "8259378498:AAF1rXYr1TQngistGhS4nKBHCk_27IhYgF8";
     const TELEGRAM_CHAT_ID = "-1003857825945";
 
-   async function enviarConfirmacao(presenteEscolhido = null) {
-    const nome = nomeConvidado.value.trim();
-    const acompanhante = nomeAcompanhante.value.trim();
 
-    if (!nome) {
-        status.textContent = "Por favor, informe seu nome.";
-        nomeConvidado.focus();
-        return;
-    }
+    /* =====================================
+       11. ENVIAR CONFIRMAÇÃO AO TELEGRAM
+    ===================================== */
 
-    if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
-        status.textContent = "Configuração do Telegram não encontrada.";
-        return;
-    }
+    async function enviarConfirmacao(presenteEscolhido = null) {
 
-    const presente = presenteEscolhido || "Não selecionado";
+        const nome = nomeConvidadoInput.value.trim();
 
-    const mensagem = `
+        const acompanhante = nomeAcompanhanteInput.value.trim();
+
+        // Validar nome
+
+        if (!nome) {
+
+            statusPresenca.textContent =
+                "Por favor, informe seu nome.";
+
+            nomeConvidadoInput.focus();
+
+            return;
+        }
+
+        // Validar configuração do Telegram
+
+        if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
+
+            statusPresenca.textContent =
+                "Configuração do Telegram não encontrada.";
+
+            return;
+        }
+
+        const presente = presenteEscolhido || "Não selecionado";
+
+        const mensagem = `
 🎉 *CONFIRMAÇÃO DE PRESENÇA*
 
 👑 *Evento:* 15 anos da Sophia
@@ -359,138 +273,124 @@ document.addEventListener("DOMContentLoaded", function () {
 ⏰ *Horário:* A partir das 11h
 `;
 
-    btnEnviar.disabled = true;
-    btnSemPresente.disabled = true;
+        btnEnviar.disabled = true;
+        btnSemPresente.disabled = true;
 
-    status.textContent = "Enviando confirmação...";
+        statusPresenca.textContent = "Enviando confirmação...";
 
-    try {
-        const resposta = await fetch(
-            `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: mensagem,
-                    parse_mode: "Markdown"
-                })
-            }
-        );
+        try {
 
-        const resultado = await resposta.json();
+            const resposta = await fetch(
+                `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+                {
+                    method: "POST",
 
-        if (!resposta.ok || !resultado.ok) {
-            throw new Error("Não foi possível enviar a confirmação.");
-        }
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-        status.textContent = "";
-
-        mostrarConfirmacao(nome, presente);
-
-    } catch (erro) {
-        console.error("Erro Telegram:", erro);
-
-        status.textContent =
-            "Não foi possível enviar. Tente novamente.";
-
-        btnEnviar.disabled = false;
-        btnSemPresente.disabled = false;
-    }
-}
-
-    /* =====================================
-       11. CONFIRMAR COM PRESENTE
-    ===================================== */
-
-    formPresenca.addEventListener(
-        "submit",
-        async function (event) {
-
-            event.preventDefault();
-
-            await enviarConfirmacao(
-                presenteSelecionado
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: mensagem,
+                        parse_mode: "Markdown"
+                    })
+                }
             );
 
-        }
-    );
+            const resultado = await resposta.json();
 
-
-    /* =====================================
-       12. CONFIRMAR SEM PRESENTE
-    ===================================== */
-
-    btnSemPresente.addEventListener(
-        "click",
-        async function () {
-
-            presenteSelecionado = null;
-
-            presenteConfirmadoInput.value = "";
-
-            // Desmarcar presentes
-
-            giftOptions.forEach(function (item) {
-
-                item.classList.remove("selected");
-
-            });
-
-            await enviarConfirmacao(null);
-
-        }
-    );
-
-
-    /* =====================================
-       13. FINALIZAR
-    ===================================== */
-
-    btnFinalizar.addEventListener(
-        "click",
-        function () {
-
-            fecharModal();
-
-            // Restaurar formulário
-
-            formPresenca.hidden = false;
-
-            giftSection.hidden = false;
-
-            modalHeader.hidden = false;
-
-            mensagemConfirmacao.hidden = true;
-
-            // Limpar campos
-
-            formPresenca.reset();
-
-            presenteSelecionado = null;
+            if (!resposta.ok || !resultado.ok) {
+                throw new Error("Não foi possível enviar a confirmação.");
+            }
 
             statusPresenca.textContent = "";
 
-            // Restaurar botões
+            mostrarConfirmacao(nome, presente);
+
+        } catch (erro) {
+
+            console.error("Erro Telegram:", erro);
+
+            statusPresenca.textContent =
+                "Não foi possível enviar. Tente novamente.";
 
             btnEnviar.disabled = false;
-
             btnSemPresente.disabled = false;
 
-            btnEnviar.textContent =
-                "CONFIRMAR PRESENÇA";
-
-            // Limpar seleção visual
-
-            giftOptions.forEach(function (item) {
-
-                item.classList.remove("selected");
-
-            });
-
         }
-    );
+
+    }
+
+
+    /* =====================================
+       12. CONFIRMAR COM PRESENTE
+    ===================================== */
+
+    formPresenca.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        await enviarConfirmacao(presenteSelecionado);
+
+    });
+
+
+    /* =====================================
+       13. CONFIRMAR SEM PRESENTE
+    ===================================== */
+
+    btnSemPresente.addEventListener("click", async function () {
+
+        presenteSelecionado = null;
+
+        presenteConfirmadoInput.value = "";
+
+        // Desmarcar presentes
+
+        giftOptions.forEach(function (item) {
+            item.classList.remove("selected");
+        });
+
+        await enviarConfirmacao(null);
+
+    });
+
+
+    /* =====================================
+       14. FINALIZAR
+    ===================================== */
+
+    btnFinalizar.addEventListener("click", function () {
+
+        fecharModal();
+
+        // Restaurar formulário
+
+        formPresenca.hidden = false;
+        giftSection.hidden = false;
+        modalHeader.hidden = false;
+
+        mensagemConfirmacao.hidden = true;
+
+        // Limpar campos
+
+        formPresenca.reset();
+
+        presenteSelecionado = null;
+
+        statusPresenca.textContent = "";
+
+        // Restaurar botões
+
+        btnEnviar.disabled = false;
+        btnSemPresente.disabled = false;
+
+        // Limpar seleção visual
+
+        giftOptions.forEach(function (item) {
+            item.classList.remove("selected");
+        });
+
+    });
 
 });
